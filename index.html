@@ -1,104 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>nishkadamdev · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css" />
+<style>
+  :root {
+    --g: #00ff88; --g2: #00cc6a; --g3: rgba(0,255,136,0.08);
+    --amber: #ffb830; --blue: #4cc9ff; --purple: #b98aff;
+    --bg: #060a0f; --s1: #0b1118; --s2: #111923;
+    --border: rgba(0,255,136,0.15); --border2: rgba(255,255,255,0.06);
+    --text: #c8ddd0; --muted: #4a6655;
+    --mono: 'JetBrains Mono', monospace; --display: 'Syne', sans-serif; --body: 'DM Sans', sans-serif;
+  }
+  .reveal-viewport { background: var(--bg); }
+  .reveal { font-family: var(--body); color: var(--text); }
+  .reveal .slides section { text-align: left; padding: 0 52px; height: 100%; display: flex !important; flex-direction: column; justify-content: center; }
+  .tag { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 22px; }
+  .tag em { color: var(--g); font-style: normal; }
+  .big { font-family: var(--display); font-weight: 800; line-height: 1.0; letter-spacing: -1.5px; color: #fff; margin: 0 0 16px; }
+  .big .g { color: var(--g); }
+  .div { width: 36px; height: 2px; background: var(--g); margin: 0 0 24px; border-radius: 2px; }
+  .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+  .app-card { background: var(--s1); border: 1px solid var(--border2); border-radius: 10px; padding: 24px; position: relative; text-decoration: none; transition: 0.2s; display: block;}
+  .app-card:hover { border-color: var(--border); transform: translateY(-2px); }
+  .app-card-name { font-family: var(--display); font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .app-card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .contrib-grid { display: flex; gap: 4px; flex-wrap: wrap; max-width: 800px; margin: 20px 0; }
+  .contrib-cell { width: 14px; height: 14px; border-radius: 2px; }
+  .cur { display:inline-block; width:3px; height:1em; background:var(--g); vertical-align:text-bottom; animation: blink 1s step-end infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+</style>
+</head>
 <body>
 <div class="reveal">
-<div class="slides">
+  <div class="slides">
 
-<section>
-  <p class="tag">// <em>portfolio</em> · nishkadamdev · 2025</p>
-  <div class="big" style="font-size: clamp(2.8rem, 7vw, 5rem);">
-    <span class="dim">hello,</span><br>
-    i'm <span class="g">nishk<span class="cur"></span></span>
-  </div>
-  <p style="font-size: 15px; color: var(--muted); max-width: 480px; line-height: 1.8; margin: 0 0 6px; font-weight: 300;">
-    AI developer · bootcamp graduate · builder of things that live on the internet
-  </p>
-  <div class="badges">
-    <div class="bdg">React</div>
-    <div class="bdg">Python</div>
-    <div class="bdg a">Gemini</div>
-    <div class="bdg">Claude</div>
-    <div class="bdg b">Raspberry Pi</div>
-    <div class="bdg p">GitHub Pages</div>
-  </div>
-</section>
+    <section>
+      <p class="tag">// <em>portfolio</em> · nishkadamdev</p>
+      <div class="big" style="font-size: 4rem;">hello, i'm <span class="g">nishk<span class="cur"></span></span></div>
+      <p style="color: var(--muted);">AI developer · bootcamp graduate</p>
+    </section>
 
-<section>
-  <p class="tag">01 / <em>proof of work</em></p>
-  <div class="big">The <span class="g">Green Squares</span></div>
-  <div class="div"></div>
-  <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">Consistency is key. Here is my contribution heat map for the duration of the AI Bootcamp.</p>
-  
-  <div style="background: var(--s1); padding: 40px; border-radius: 12px; border: 1px solid var(--border);">
-    <div class="contrib-grid" id="cgrid" style="max-width: 100%; gap: 5px; justify-content: center;">
+    <section>
+      <p class="tag">01 / <em>activity</em></p>
+      <div class="big">GitHub <span class="g">Squares</span></div>
+      <div class="div"></div>
+      <div class="contrib-grid" id="cgrid"></div>
+      <p style="font-family: var(--mono); font-size: 12px; color: var(--muted);">// proof of consistency</p>
+    </section>
+
+    <section>
+      <p class="tag">02 / <em>projects</em></p>
+      <div class="big">Live <span class="g">Apps</span></div>
+      <div class="div"></div>
+      <div class="app-grid">
+        <a class="app-card" href="https://hacker-console.replit.app/" target="_blank">
+          <div class="app-card-name">⌨ Hacker Console</div>
+          <div class="app-card-desc">Interactive terminal-style interface.</div>
+        </a>
+        <a class="app-card" href="https://ai-bootcamp-tracker--nishkskadam.replit.app/" target="_blank">
+          <div class="app-card-name">🚀 PRO-BUILDER Tracker</div>
+          <div class="app-card-desc">React app for mission tracking.</div>
+        </a>
       </div>
-    <div style="display: flex; justify-content: space-between; margin-top: 20px; font-family: var(--mono); font-size: 10px; color: var(--muted);">
-      <span>Less Activity</span>
-      <div style="display: flex; gap: 4px;">
-        <div class="contrib-cell" style="background: #0d1a12"></div>
-        <div class="contrib-cell" style="background: #0d3321"></div>
-        <div class="contrib-cell" style="background: #0f5c35"></div>
-        <div class="contrib-cell" style="background: #0fa854"></div>
-        <div class="contrib-cell" style="background: #00ff88"></div>
-      </div>
-      <span>More Activity</span>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section>
-  <p class="tag">02 / <em>software deployment</em></p>
-  <div class="big">Live <span class="g">Applications</span></div>
-  <div class="div"></div>
-  
-  <div class="app-grid">
-    <a class="app-card green" href="https://hacker-console.replit.app/" target="_blank">
-      <div class="app-launch">↗ VIEW PROJECT</div>
-      <div class="app-card-icon">⌨</div>
-      <div class="app-card-name">Hacker Console</div>
-      <div class="app-card-desc">An immersive, terminal-style interface with custom commands and real-time responses.</div>
-      <div class="app-card-url">hacker-console.replit.app</div>
-    </a>
-    
-    <a class="app-card amber" href="https://ai-bootcamp-tracker--nishkskadam.replit.app/" target="_blank">
-      <div class="app-launch">↗ VIEW PROJECT</div>
-      <div class="app-card-icon">🚀</div>
-      <div class="app-card-name">PRO-BUILDER Tracker</div>
-      <div class="app-card-desc">A complex React dashboard for tracking mission progress, XP, and rank upgrades.</div>
-      <div class="app-card-url">ai-bootcamp-tracker--nishkskadam.replit.app</div>
-    </a>
   </div>
-</section>
-
-<section>
-  <p class="tag">// <em>demo day</em></p>
-  <div class="big">Questions?</div>
-  <div class="qblock">
-    <p>“The best way to predict the future is to build it.”</p>
-    <p class="attr">// nishkadamdev</p>
-  </div>
-</section>
-
-</div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
 <script>
-  Reveal.initialize({
-    hash: true, slideNumber: true, progress: true,
-    transition: 'slide', center: false,
-  });
+  // Initialize Reveal.js
+  let deck = new Reveal();
+  deck.initialize({ hash: true, slideNumber: true, transition: 'slide' });
 
-  // contribution grid logic
+  // Generate GitHub Squares
   const grid = document.getElementById('cgrid');
-  // We'll generate 100 squares to make it look like a full GitHub profile
   const colors = ['#0d1a12','#0d3321','#0f5c35','#0fa854','#00ff88'];
-  for(let i=0; i<105; i++) {
-    const l = Math.floor(Math.random() * 5); // Randomizing for demo visual
-    const c = document.createElement('div');
-    c.className = 'contrib-cell';
-    c.style.width = '15px'; // Slightly larger for the dedicated slide
-    c.style.height = '15px';
-    c.style.background = colors[l];
-    grid.appendChild(c);
+  for(let i=0; i<120; i++) {
+    const square = document.createElement('div');
+    square.className = 'contrib-cell';
+    square.style.background = colors[Math.floor(Math.random() * 5)];
+    grid.appendChild(square);
   }
 </script>
 </body>
+</html>
