@@ -19,6 +19,8 @@
   }
   .reveal-viewport { background: var(--bg); }
   .reveal { font-family: var(--body); color: var(--text); }
+  .reveal-viewport::after { content: ''; pointer-events: none; position: fixed; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px); z-index: 9999; }
+  .reveal-viewport::before { content: ''; pointer-events: none; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px); background-size: 48px 48px; z-index: 0; }
   .reveal .slides section { text-align: left; padding: 0 52px; height: 100%; display: flex !important; flex-direction: column; justify-content: center; }
   .tag { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 22px; }
   .tag em { color: var(--g); font-style: normal; }
@@ -26,11 +28,11 @@
   .big .g { color: var(--g); }
   .div { width: 36px; height: 2px; background: var(--g); margin: 0 0 24px; border-radius: 2px; }
   .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
-  .app-card { background: var(--s1); border: 1px solid var(--border2); border-radius: 10px; padding: 24px; position: relative; text-decoration: none; transition: 0.2s; display: block;}
+  .app-card { background: var(--s1); border: 1px solid var(--border2); border-radius: 10px; padding: 24px; position: relative; text-decoration: none; transition: 0.2s; display: block; }
   .app-card:hover { border-color: var(--border); transform: translateY(-2px); }
   .app-card-name { font-family: var(--display); font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 6px; }
   .app-card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-  .contrib-grid { display: flex; gap: 4px; flex-wrap: wrap; max-width: 800px; margin: 20px 0; }
+  .contrib-grid { display: flex; gap: 5px; flex-wrap: wrap; max-width: 700px; margin: 20px 0; }
   .contrib-cell { width: 14px; height: 14px; border-radius: 2px; }
   .cur { display:inline-block; width:3px; height:1em; background:var(--g); vertical-align:text-bottom; animation: blink 1s step-end infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -42,31 +44,42 @@
 
     <section>
       <p class="tag">// <em>portfolio</em> · nishkadamdev</p>
-      <div class="big" style="font-size: 4rem;">hello, i'm <span class="g">nishk<span class="cur"></span></span></div>
-      <p style="color: var(--muted);">AI developer · bootcamp graduate</p>
+      <div class="big" style="font-size: clamp(2.8rem, 7vw, 5rem);">hello, i'm <span class="g">nishk<span class="cur"></span></span></div>
+      <p style="font-size: 15px; color: var(--muted); max-width: 480px; line-height: 1.8;">AI developer · bootcamp graduate · builder of things</p>
+      <div class="hero-footer" style="margin-top: 20px; font-family: var(--mono); font-size: 10px; color: var(--muted);">press → to navigate</div>
     </section>
 
     <section>
-      <p class="tag">01 / <em>activity</em></p>
-      <div class="big">GitHub <span class="g">Squares</span></div>
+      <p class="tag">01 / <em>consistency</em></p>
+      <div class="big">GitHub <span class="g">Activity</span></div>
       <div class="div"></div>
       <div class="contrib-grid" id="cgrid"></div>
-      <p style="font-family: var(--mono); font-size: 12px; color: var(--muted);">// proof of consistency</p>
+      <p style="font-family: var(--mono); font-size: 11px; color: var(--muted);">// 15 days of consecutive building during AI bootcamp</p>
     </section>
 
     <section>
-      <p class="tag">02 / <em>projects</em></p>
-      <div class="big">Live <span class="g">Apps</span></div>
+      <p class="tag">02 / <em>deployments</em></p>
+      <div class="big">My <span class="g">Apps</span></div>
       <div class="div"></div>
       <div class="app-grid">
         <a class="app-card" href="https://hacker-console.replit.app/" target="_blank">
-          <div class="app-card-name">⌨ Hacker Console</div>
-          <div class="app-card-desc">Interactive terminal-style interface.</div>
+          <div style="color: var(--g); font-size: 10px; margin-bottom: 8px;">LIVE ↗</div>
+          <div class="app-card-name">Hacker Console</div>
+          <div class="app-card-desc">Interactive terminal UI built for bootcamp mission 04.</div>
         </a>
         <a class="app-card" href="https://ai-bootcamp-tracker--nishkskadam.replit.app/" target="_blank">
-          <div class="app-card-name">🚀 PRO-BUILDER Tracker</div>
-          <div class="app-card-desc">React app for mission tracking.</div>
+          <div style="color: var(--amber); font-size: 10px; margin-bottom: 8px;">LIVE ↗</div>
+          <div class="app-card-name">PRO-BUILDER Tracker</div>
+          <div class="app-card-desc">React-based mission & XP dashboard.</div>
         </a>
+      </div>
+    </section>
+
+    <section>
+      <p class="tag">// <em>day 15</em></p>
+      <div class="big">The <span class="g">End.</span></div>
+      <div style="border-left: 2px solid var(--g); padding-left: 20px; background: var(--s1); padding: 15px;">
+        <p style="font-style: italic; font-size: 14px;">"Two AIs. One Pi. Fifteen days. This is just the beginning."</p>
       </div>
     </section>
 
@@ -75,14 +88,18 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
 <script>
-  // Initialize Reveal.js
-  let deck = new Reveal();
-  deck.initialize({ hash: true, slideNumber: true, transition: 'slide' });
+  // Use the standard initialization method
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    transition: 'slide',
+    center: false
+  });
 
   // Generate GitHub Squares
   const grid = document.getElementById('cgrid');
   const colors = ['#0d1a12','#0d3321','#0f5c35','#0fa854','#00ff88'];
-  for(let i=0; i<120; i++) {
+  for(let i=0; i<112; i++) {
     const square = document.createElement('div');
     square.className = 'contrib-cell';
     square.style.background = colors[Math.floor(Math.random() * 5)];
